@@ -1,0 +1,30 @@
+# Fire Station Tracker - Apache / LiteSpeed (Hostinger) settings.
+DirectoryIndex index.php
+Options -Indexes
+
+# Block config, docs and data files.
+<FilesMatch "\.(sql|log|md|lock|ini|bak|sh|json|py|xlsx)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+<Files "config.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# Always fresh data for the live screens.
+<IfModule mod_headers.c>
+    <FilesMatch "^(state|traccar|location|action|trail|resolve)\.php$">
+        Header set Cache-Control "no-store"
+    </FilesMatch>
+</IfModule>

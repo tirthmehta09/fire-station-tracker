@@ -1,0 +1,20 @@
+# fire-station-tracker
+
+# dependencies and build output
+node_modules/
+.next/
+dist/
+build/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# the local XAMPP config -- config.sample.php is the one to copy
+config.php
+
+# uploaded files and anything the install writes
+uploads/
+*.log

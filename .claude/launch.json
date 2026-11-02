@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "firetrack",
+      "runtimeExecutable": "C:\\xampp\\php\\php.exe",
+      "runtimeArgs": ["-S", "127.0.0.1:8090", "-t", "D:\\fire-station-tracker"],
+      "port": 8090
+    }
+  ]
+}
